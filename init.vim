@@ -17,7 +17,7 @@ autocmd FileType * set tabstop=8 shiftwidth=8 expandtab
 " plugins
 call plug#begin('~/.config/nvim/plugins')
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
+Plug 'akinsho/bufferline.nvim'
 Plug 'romgrk/doom-one.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,16 +26,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'd-Qw4w9WgXc-Q/vim-scarpet'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 call plug#end()
 
 " enable the color scheme
@@ -60,21 +58,21 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '// ','right': '' }, 'lua': {'left
 let g:cpp_member_highlight = 1
 
 " keybindings
-nnoremap <silent> <leader>bp :BufferPrevious<cr>
-nnoremap <silent> <leader>bn :BufferNext<cr>
-nnoremap <silent> <leader>bc :BufferClose<cr>
-nnoremap <silent> <leader>bN :BufferMoveNext<cr>
-nnoremap <silent> <leader>bP :BufferMovePrevious<cr>
-nnoremap <silent> <leader>b1 :BufferGoto 1<cr>
-nnoremap <silent> <leader>b2 :BufferGoto 2<cr>
-nnoremap <silent> <leader>b3 :BufferGoto 3<cr>
-nnoremap <silent> <leader>b4 :BufferGoto 4<cr>
-nnoremap <silent> <leader>b5 :BufferGoto 5<cr>
-nnoremap <silent> <leader>b6 :BufferGoto 6<cr>
-nnoremap <silent> <leader>b7 :BufferGoto 7<cr>
-nnoremap <silent> <leader>b8 :BufferGoto 8<cr>
-nnoremap <silent> <leader>b9 :BufferGoto 9<cr>
-nnoremap <silent> <leader>b9 :BufferGoto 9<cr>
+nnoremap <silent> <leader>bp :BufferLineCyclePrev<cr>
+nnoremap <silent> <leader>bn :BufferLineCycleNext<cr>
+nnoremap <silent> <leader>bc :BufferLinePickClose<cr>
+nnoremap <silent> <leader>bN :BufferLineMoveNext<cr>
+nnoremap <silent> <leader>bP :BufferLineMovePrev<cr>
+nnoremap <silent> <leader>b1 :BufferLineGoToBuffer 1<cr>
+nnoremap <silent> <leader>b2 :BufferLineGoToBuffer 2<cr>
+nnoremap <silent> <leader>b3 :BufferLineGoToBuffer 3<cr>
+nnoremap <silent> <leader>b4 :BufferLineGoToBuffer 4<cr>
+nnoremap <silent> <leader>b5 :BufferLineGoToBuffer 5<cr>
+nnoremap <silent> <leader>b6 :BufferLineGoToBuffer 6<cr>
+nnoremap <silent> <leader>b7 :BufferLineGoToBuffer 7<cr>
+nnoremap <silent> <leader>b8 :BufferLineGoToBuffer 8<cr>
+nnoremap <silent> <leader>b9 :BufferLineGoToBuffer 9<cr>
+nnoremap <silent> <leader>b9 :BufferLineGoToBuffer 9<cr>
 
 nnoremap <silent> <leader>n :NERDTree<cr>
 
