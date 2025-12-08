@@ -1,6 +1,8 @@
 set encoding=UTF-8
 set termguicolors
 
+set signcolumn=no
+
 " map <leader> to ò
 let mapleader = "ò"
 
@@ -34,6 +36,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'javiorfo/nvim-soil'
+Plug 'nsxiv/nsxiv'
 call plug#end()
 
 " enable the color scheme

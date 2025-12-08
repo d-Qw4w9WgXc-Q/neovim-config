@@ -93,6 +93,7 @@ cmp.setup.cmdline(':', {
 })
 
 -- Set up lspconfig.
+--[[
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 lspconfig['clangd'].setup {
@@ -101,3 +102,26 @@ lspconfig['clangd'].setup {
 lspconfig['pyright'].setup {
         capabilities = capabilities
 }
+lspconfig['hls'].setup {
+        capabilities = capabilities
+}
+lspconfig['jdtls'].setup {
+        capabilities = capabilities
+}
+lspconfig['html'].setup {
+        capabilities = capabilities
+}
+lspconfig['cssls'].setup {
+        capabilities = capabilities
+}
+lspconfig['ts_ls'].setup {
+        capabilities = capabilities
+}
+]]
+
+vim.lsp.enable('clangd')
+vim.lsp.enable('pyright')
+vim.lsp.enable('hls')
+vim.lsp.enable('htmls')
+vim.lsp.enable('cssls')
+vim.lsp.enable('ts_ls')
