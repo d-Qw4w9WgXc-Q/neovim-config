@@ -37,7 +37,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'javiorfo/nvim-soil'
-Plug 'nsxiv/nsxiv'
 call plug#end()
 
 " enable the color scheme
