@@ -15,12 +15,13 @@ set list
 set listchars=tab:<->,space:·
 autocmd FileType * set tabstop=8 shiftwidth=8 expandtab
 
+set winborder=rounded
 
 " plugins
 call plug#begin('~/.config/nvim/plugins')
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
-Plug 'romgrk/doom-one.vim'
+Plug 'NTBBloodbath/doom-one.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
@@ -37,6 +38,11 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'd-Qw4w9WgXc-Q/nvim-soil-kitty'
+Plug 'kylechui/nvim-surround'
+Plug 'elihunter173/dirbuf.nvim'
+Plug 'rafamadriz/friendly-snippets'
+Plug 'onsails/lspkind.nvim'
+Plug 'lukas-reineke/headlines.nvim'
 call plug#end()
 
 " enable the color scheme
@@ -79,9 +85,7 @@ nnoremap <silent> <leader>b9 :BufferLineGoToBuffer 9<cr>
 
 nnoremap <silent> <leader>n :NERDTree<cr>
 
-nnoremap <silent> <leader>ff :CtrlP<cr>
-nnoremap <silent> <leader>fb :CtrlPBuffer<cr>
-nnoremap <silent> <leader>fa :CtrlPMixed<cr>
+nnoremap <silent> <leader>p :CtrlPClearCache<cr>
 
 nnoremap <silent> gd :lua vim.lsp.buf.definition()<cr>
 nnoremap <silent> K  :lua vim.lsp.buf.hover()<cr>
