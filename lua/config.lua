@@ -110,3 +110,6 @@ vim.lsp.config('asm_lsp', {
         filetypes = {"asm", "vmasm", "s"}
 })
 vim.lsp.enable('asm_lsp')
+
+vim.lsp.enable('lua_ls') -- these do not work with 0.12 for me
+vim.lsp.enable('ts_ls')
