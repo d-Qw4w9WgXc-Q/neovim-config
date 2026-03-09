@@ -5,4 +5,4 @@ If you want to use this you're gonna need the [vim-plug package manager](https:/
 
 You also need to install the various lsp programs (e.g pyright) for autocomplete
 
-I personally use neovim-git from the aur, but this should work with older versions too (probably 0.7+)
+This works for neovim 0.11.6
