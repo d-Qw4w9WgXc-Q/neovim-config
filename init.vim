@@ -24,7 +24,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'NTBBloodbath/doom-one.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'd-Qw4w9WgXc-Q/vim-scarpet'
@@ -42,6 +42,8 @@ Plug 'elihunter173/dirbuf.nvim'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'onsails/lspkind.nvim'
 Plug 'lukas-reineke/headlines.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 call plug#end()
 
 " enable the color scheme
@@ -82,11 +84,11 @@ nnoremap <silent> <leader>b8 :BufferLineGoToBuffer 8<cr>
 nnoremap <silent> <leader>b9 :BufferLineGoToBuffer 9<cr>
 nnoremap <silent> <leader>b9 :BufferLineGoToBuffer 9<cr>
 
-nnoremap <silent> <leader>n :NERDTree<cr>
+nnoremap <silent> <leader>n :NvimTreeOpen<cr>
 
 nnoremap <silent> <leader>p :CtrlPClearCache<cr>
 
-nnoremap <silent> gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <silent> gd :Dirbuf<cr>
 nnoremap <silent> K  :lua vim.lsp.buf.hover()<cr>
 
 lua require('config')

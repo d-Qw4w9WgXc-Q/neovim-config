@@ -1,9 +1,34 @@
+-- need to install tree-sitter-cli for this
+local languages = {'c', 'cpp', 'python', 'javascript'};
+require'nvim-treesitter'.install(languages);
+
+vim.api.nvim_create_autocmd('FileType', {
+        pattern = languages,
+        callback = function()
+                vim.treesitter.start()
+        end,
+})
+
 require('bufferline').setup{
         options = {
                 separator_style = 'slope'
         }
 }
 
+require'nvim-treesitter-textobjects'.setup()
+
+vim.keymap.set({ "x", "o" }, "af", function()
+        require "nvim-treesitter-textobjects.select".select_textobject("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "if", function()
+        require "nvim-treesitter-textobjects.select".select_textobject("@function.inner", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "ac", function()
+        require "nvim-treesitter-textobjects.select".select_textobject("@class.outer", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "ic", function()
+        require "nvim-treesitter-textobjects.select".select_textobject("@class.inner", "textobjects")
+end)
 
 local cmp = require'cmp'
 local lspkind = require'lspkind'
@@ -94,7 +119,14 @@ cmp.setup.cmdline(':', {
         matching = { disallow_symbol_nonprefix_matching = false }
 })
 
+
+
 require("luasnip.loaders.from_vscode").lazy_load()
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require'nvim-tree'.setup()
 
 -- lsp setups
 
@@ -107,7 +139,7 @@ vim.lsp.enable('hls')
 vim.lsp.enable('cssls')
 vim.lsp.enable('html')
 vim.lsp.config('asm_lsp', {
-        filetypes = {"asm", "vmasm", "s"}
+        filetypes = {"asm", "vmasm"}
 })
 vim.lsp.enable('asm_lsp')
 
