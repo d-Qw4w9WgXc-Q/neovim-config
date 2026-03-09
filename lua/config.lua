@@ -29,6 +29,10 @@ end)
 vim.keymap.set({ "x", "o" }, "ic", function()
         require "nvim-treesitter-textobjects.select".select_textobject("@class.inner", "textobjects")
 end)
+vim.keymap.set({ "x", "o" }, "as", function()
+        require "nvim-treesitter-textobjects.select".select_textobject("@local.scope", "textobjects")
+end)
+
 
 local cmp = require'cmp'
 local lspkind = require'lspkind'
